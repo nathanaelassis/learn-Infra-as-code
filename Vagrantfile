@@ -20,5 +20,6 @@ Vagrant.configure("2") do |config|
      server.vm.provision "shell", path: "iaac.sh", run: "once"
      server.vm.network "forwarded_port", guest: 8000, host: 8000
      server.vm.network "forwarded_port", guest: 8081, host: 8081
+     server.vm.network "forwarded_port", guest: 80, host: 8080
   end
 end
