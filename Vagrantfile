@@ -17,7 +17,7 @@ Vagrant.configure("2") do |config|
      server.vm.box = "ubuntu/focal64"
      server.vm.hostname = "server"
      server.vm.network :private_network, ip: "10.0.0.11"
-     server.vm.provision "shell", path: "iaac.sh", run: "once"
+     server.vm.provision "shell", path: "server.sh", run: "once"
      server.vm.network "forwarded_port", guest: 8000, host: 8000
      server.vm.network "forwarded_port", guest: 8081, host: 8081
      server.vm.network "forwarded_port", guest: 80, host: 8080
